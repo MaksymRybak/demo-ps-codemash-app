@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>SessionDetail</ion-title>
+  </ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/home"></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle
+        >{{
+        sessionData.getSessionType(session).toLocaleUpperCase()}}</ion-card-subtitle
+      >
+      <ion-card-title>{{ session.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div *ngFor="let speaker of session.speakers">{{ speaker.name }}</div>
+      <div>Room: {{ session.room }}</div>
+      <div>{{ session.startsAt | date: "EEE, MMMM d, y h:mm a" }}</div>
+      <br />
+      <ion-badge
+        *ngFor="let tag of sessionData.getSessionTags(session)"
+        item-end
+        >{{ tag.name }}</ion-badge
+      >
+      <br />
+      <h3>{{ session.description }}</h3>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

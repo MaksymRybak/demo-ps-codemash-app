@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'session-detail',
+    loadChildren: () => import('./session-detail/session-detail.module').then( m => m.SessionDetailPageModule)
+  },
 ];
 
 @NgModule({

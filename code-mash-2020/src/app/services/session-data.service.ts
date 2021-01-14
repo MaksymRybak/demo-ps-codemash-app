@@ -34,7 +34,7 @@ export class SessionDataService {
     }
   }
 
-  public getSessionDetails(sessionId: string) {
+  public getSessionDetails(sessionId: String) {
     return this.sessionList.find((s) => s.id === sessionId);
   }
 }

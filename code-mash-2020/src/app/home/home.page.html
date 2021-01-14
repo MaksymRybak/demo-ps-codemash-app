@@ -6,8 +6,39 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let session of sessionData.getSessions()">
-      {{ session.title }}
+    <ion-item
+      [href]="'/session-detail/' + session.id"
+      *ngFor="let session of sessionData.getSessions()"
+    >
+      <ion-thumbnail
+        [ngSwitch]="sessionData.getSessionType(session)"
+        slot="start"
+      >
+        <img
+          *ngSwitchCase="'precompiler'"
+          src="../../assets/icon/PreCompiler.png"
+        />
+        <img
+          *ngSwitchCase="'general session'"
+          src="../../assets/icon/GeneralSession.png"
+        />
+        <img
+          *ngSwitchCase="'kidzmash sessionz'"
+          src="../../assets/icon/KidMashSession.png"
+        />
+        <img
+          *ngSwitchCase="'kidzmash divez'"
+          src="../../assets/icon/KidMashDivez.png"
+        />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ session.title }}</h2>
+        <ion-badge
+          *ngFor="let tag of sessionData.getSessionTags(session)"
+          item-end
+          >{{ tag.name }}</ion-badge
+        >
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
