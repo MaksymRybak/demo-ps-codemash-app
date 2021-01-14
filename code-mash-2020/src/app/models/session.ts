@@ -13,12 +13,12 @@ export interface SessionSpeaker {
 }
 
 export interface CategoryItem {
-  id: string;
+  id: number;
   name: string;
 }
 
 export interface Category {
-  id: string;
+  id: number;
   name: string;
   categoryItems: CategoryItem[];
   sort: number;
@@ -31,7 +31,7 @@ export interface Session {
   description: string;
   startsAt?: any;
   endsAt?: any;
-  isServiseSession: boolean;
+  isServiceSession: boolean;
   isPlenumSession: boolean;
   speakers: SessionSpeaker[];
   categories: Category[];
