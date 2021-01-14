@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'session-detail',
     loadChildren: () => import('./session-detail/session-detail.module').then( m => m.SessionDetailPageModule)
   },
+  {
+    path: 'session-picture',
+    loadChildren: () => import('./session-picture/session-picture.module').then( m => m.SessionPicturePageModule)
+  },
 ];
 
 @NgModule({

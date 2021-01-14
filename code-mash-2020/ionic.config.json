@@ -1,5 +1,7 @@
 {
   "name": "CodeMash 2020",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
